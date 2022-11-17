@@ -24,8 +24,8 @@ int main(int argc, char *argv[])
 	   //Variable Declaration
        int Numbers[a], p;
 	char buf[30];
-	//a=0;
-	//b=4;
+	
+
 	key_t k = 100;	 //key_t k
  	struct  sembuf p1;//declaration of semaphore structure 
  	
@@ -48,9 +48,11 @@ int main(int argc, char *argv[])
 		write(1,"\n",1);		
 		write(1,"=====In Entry====", 18);
 		write(1,"\n",1);
+		
 		p1.sem_num=0;  /* semaphore number */
 		p1.sem_op=1;   /* semaphore operation */
 		p1.sem_flg=0;  /* operation flags */
+		
 		val=semop(id,&p1,1);
 		
         
